@@ -23,7 +23,7 @@ const getAll = async () => {
 
 const insert = async (profesor) => {
   try {
-    const [id, nombre, apellido, categoria, grado] = profesor
+    const {id, nombre, apellido, categoria, grado} = profesor
 
     await client.connect()
 

@@ -8,3 +8,7 @@ Content-Type: application/json
     "categoria": "Auxiliar",
     "grado": "Magister"
 }
+
+###
+
+GET https://star-cheese-production.up.railway.app/profesores/getall
