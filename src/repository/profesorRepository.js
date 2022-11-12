@@ -12,12 +12,11 @@ const client = new Client({
 await client.connect()
 
 const getAll = () => {
-    client.query('SELECT NOW()', (err,resp) => {
+    client.query('SELECT * from profesor', (err,resp) => {
         console.log(resp)
         client.end()
+      return resp
     })
-
-    return null
 }
 
 const insert = () => {
