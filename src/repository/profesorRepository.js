@@ -12,13 +12,20 @@ const client = new Client({
 
 
 const getAll = async () => {
+    
+  try {
     await client.connect()
 
     return client.query('SELECT * from profesor', (err,resp) => {
         console.log(err, resp.rows)
-        client.end()
       return resp.rows
     })
+  } catch(err) {
+    console.log(err)
+  } finally {
+    client.end()
+  }
+  
 }
 
 const insert = () => {
