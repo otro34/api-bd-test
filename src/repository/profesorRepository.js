@@ -9,9 +9,11 @@ const client = new Client({
   port: 7677,
 })
 
-await client.connect()
 
-const getAll = () => {
+
+const getAll = async () => {
+    await client.connect()
+
     return client.query('SELECT * from profesor', (err,resp) => {
         console.log(err, resp.rows)
         client.end()

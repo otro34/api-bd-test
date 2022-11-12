@@ -1,7 +1,7 @@
 import { ProfesorRepository } from '../repository/index.js'
 
-const getAll = () => {
-    return ProfesorRepository.getAll();
+const getAll = async () => {
+    return await ProfesorRepository.getAll();
 }
 
 const insert = () => {

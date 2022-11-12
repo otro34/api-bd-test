@@ -16,7 +16,10 @@ app.use(bodyParser.json());
 
 app.get('/profesores/getAll', (req,res)=> {
     console.log('PROFESORES GETALL')
-    return res.json(ProfesorService.getAll());
+
+    ProfesorService.getAll().then((response)=> {
+        return res.status(200).json(response);
+    })
 })
 
 app.post('/enrollment', (req,res,next)=> {
