@@ -2,11 +2,11 @@ import pg from 'pg'
 const { Pool } = pg
 
 const client = new Pool({
-  user: 'postgres',
-  host: 'containers-us-west-120.railway.app',
-  database: 'railway',
-  password: 'U32DzR3EZSaJelgdIXpc',
-  port: 7677,
+  user: process.env.USER,
+  host: process.env.HOST,
+  database: process.env.DATABASE,
+  password: process.env.PASSWORD,
+  port: process.env.BDPORT,
 })
 
 const getAll = async () => {
