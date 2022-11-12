@@ -28,7 +28,7 @@ const insert = async (profesor) => {
     await client.connect()
 
     const resp = await client.query(
-      `INSERT INTO "Profesor" ("id", "nombre", "apellido", "categoria", "grado") 
+      `INSERT INTO "profesor" ("id", "nombre", "apellido", "categoria", "grado") 
       values ($1,$2,$3,$4,$5)`,[id, nombre, apellido, categoria, grado]);
     return resp;
   } catch(err) {
