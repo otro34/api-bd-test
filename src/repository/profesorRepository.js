@@ -17,8 +17,6 @@ const getAll = async () => {
     return resp;
   } catch(err) {
     console.log(err)
-  } finally {
-    client.end()
   }
   
 }
