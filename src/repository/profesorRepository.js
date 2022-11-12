@@ -14,7 +14,7 @@ const getAll = async () => {
   try {
     await client.connect()
     const resp = await client.query('SELECT * from profesor');
-    return resp;
+    return resp.rows;
   } catch(err) {
     console.log(err)
   }
