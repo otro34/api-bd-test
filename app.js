@@ -26,10 +26,8 @@ app.post('/enrollment', (req,res,next)=> {
     return res.json();
 })
 
+const port = process.env.PORT || 3001
 
-
-
-
-app.listen(3001,()=>{
-    console.log('Servidor Iniciado.')
+app.listen(port,()=>{
+    console.log(`Servidor Iniciado. ${port}`)
 })
