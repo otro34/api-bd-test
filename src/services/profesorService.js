@@ -4,8 +4,8 @@ const getAll = async () => {
     return await ProfesorRepository.getAll();
 }
 
-const insert = () => {
-    return ProfesorRepository.insert();
+const insert = async (profesor) => {
+    return await ProfesorRepository.insert(profesor);
 }
 
 const ProfesorService = { getAll, insert }

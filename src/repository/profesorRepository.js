@@ -21,8 +21,19 @@ const getAll = async () => {
   
 }
 
-const insert = () => {
+const insert = async (profesor) => {
+  try {
+    const [id, nombre, apellido, categoria, grado] = profesor
 
+    await client.connect()
+
+    const resp = await client.query(
+      `INSERT INTO "Profesor" ("id", "nombre", "apellido", "categoria", "grado") 
+      values ($1,$2,$3,$4,$5)`,[id, nombre, apellido, categoria, grado]);
+    return resp;
+  } catch(err) {
+    console.log(err)
+  }
 }
 
 const ProfesorRepository = { getAll, insert }

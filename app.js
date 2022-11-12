@@ -22,11 +22,11 @@ app.get('/profesores/getAll', (req,res)=> {
     })
 })
 
-app.post('/enrollment', (req,res,next)=> {
-    console.log('received request')
+app.post('/profesor', (req,res) => {
+    ProfesorService.insert(req.body).then((response) => {
+        return res.status(200).json('OK');
+    });
     
-    EnrollmentService.insert(req.body);
-    return res.json();
 })
 
 const port = process.env.PORT || 3001

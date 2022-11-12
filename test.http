@@ -1,0 +1,10 @@
+POST https://star-cheese-production.up.railway.app/profesor
+Content-Type: application/json
+
+{
+    "id": 4,
+    "nombre": "Roberto",
+    "apellido": "Gomez",
+    "categoria": "Auxiliar",
+    "grado": "Magister"
+}
