@@ -13,9 +13,9 @@ await client.connect()
 
 const getAll = () => {
     client.query('SELECT * from profesor', (err,resp) => {
-        console.log(err, resp)
+        console.log(err, resp.rows)
         client.end()
-      return resp
+      return resp.rows
     })
 }
 
