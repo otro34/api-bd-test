@@ -12,7 +12,7 @@ const client = new Client({
 await client.connect()
 
 const getAll = () => {
-    client.query('SELECT * from profesor', (err,resp) => {
+    return client.query('SELECT * from profesor', (err,resp) => {
         console.log(err, resp.rows)
         client.end()
       return resp.rows
