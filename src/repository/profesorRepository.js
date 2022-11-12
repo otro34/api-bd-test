@@ -9,17 +9,12 @@ const client = new Client({
   port: 7677,
 })
 
-
-
 const getAll = async () => {
     
   try {
     await client.connect()
-
-    return client.query('SELECT * from profesor', (err,resp) => {
-        console.log(err, resp.rows)
-      return resp.rows
-    })
+    const resp = await client.query('SELECT * from profesor');
+    return resp;
   } catch(err) {
     console.log(err)
   } finally {
